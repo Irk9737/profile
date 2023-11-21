@@ -1,0 +1,435 @@
+# port of HTTP
+port: 7890
+
+# port of SOCKS5
+socks-port: 7891
+
+allow-lan: false
+
+# Rule / Global/ DIRECT (default is Rule)
+mode: rule
+
+
+# set log level to stdout (default is info)
+# info / warning / error / debug
+log-level: info
+
+# A RESTful API for clash
+external-controller: 127.0.0.1:9090
+
+# Secret for RESTful API (Optional)
+secret: ""
+
+dns:
+  enable: false # set true to enable dns (default is false)
+  listen: 127.0.0.1:53
+  nameserver:
+     - 119.29.29.29
+     - 114.114.114.114
+  fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
+     - https://1.1.1.1/dns-query
+     - tls://1.0.0.1:853
+     - tls://dns.google:853
+proxies:
+  - name: "wg"
+    type: wireguard
+    server: 188.114.96.0
+    port: 3581
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:8aad:5ed:4841:9e02:c702
+    private-key: qP7CQs3XVlMJwbjZ6xEgzzw5g0ngcvgIfxsIcq10SEo=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    # preshared-key: base64
+    # remote-dns-resolve: true # 远程解析 DNS, 使用 `dns` 字段, 默认为 true
+    dns: [1.1.1.1, 1.0.0.1]
+    mtu: 1280
+    udp: true
+proxy-providers: 
+  GlaDOS-HK:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'HK'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-US:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'US'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-JP:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'JP'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-TW:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'TW'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-SG:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'SG'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-UK:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'UK'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-D1:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'D1'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-B1:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'B1'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-R1:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'R1'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-Netflix:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'Netflix'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  GlaDOS-Scholar:
+    type: http
+    path: ./profiles/proxies/GlaDOS/HK.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 1800
+    filter: 'S1'
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  v2free.xyz:
+    type: http
+    path: ./profiles/proxies/v2free.yaml
+    url: https://to.runba.cyou/link/ECm0fSayxhN1SGrh?clash=1
+    interval: 3600 
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  protonmail:
+    type: http
+    path: ./profiles/proxies/protonmail.yaml
+    url: https://update.glados-config.com/clash/105214/293219e/77200/glados.yaml
+    interval: 3600 
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - ⚖️ 负载均衡-散列
+      - ⚖️ 负载均衡-轮询
+      - GlaDOS
+      - V2Free
+      - WireGuard
+  - name: WireGuard
+    type: select
+    proxies:
+      - wg
+  - name: ⚖️ 负载均衡-散列
+    type: load-balance
+    url: http://www.google.com/generate_204
+    interval: 300
+    strategy: consistent-hashing  
+    use:
+     - v2free.xyz
+     - protonmail
+  - name: ⚖️ 负载均衡-轮询
+    type: load-balance
+    url: http://www.google.com/generate_204
+    interval: 300
+    strategy: round-robin
+    use:
+    #  - v2free.xyz
+     - protonmail
+  - name: GlaDOS
+    type: select
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - protonmail
+  - name: V2Free
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - v2free.xyz
+  - name: HK
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-HK
+  - name: US
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-US
+  - name: UK
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-UK
+  - name: TW
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-TW
+  - name: SG
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-SG
+  - name: JP
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-JP
+  - name: D1
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-D1
+  - name: R1
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-R1
+  - name: B1
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-B1
+  - name: Scholar
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-Scholar
+  - name: Netflix
+    type: url-test
+    url: http://www.gstatic.cn/generate_204
+    interval: 300
+    tolerance: 100
+    use:
+      - GlaDOS-Netflix
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  # google:
+  #   type: http
+  #   behavior: domain
+  #   url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+  #   path: ./ruleset/google.yaml
+  #   interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+rules:
+  - DOMAIN-SUFFIX,twitter.com,HK  
+  - DOMAIN-KEYWORD,instagram,HK
+  - DOMAIN,www.google.com,US
+  - DOMAIN,labs.google.com,US
+  - DOMAIN-SUFFIX,translate.googleapis.com,PROXY
+  - DOMAIN-SUFFIX,intellij.net,PROXY
+  - DOMAIN-SUFFIX,okx.com,HK
+  - DOMAIN-SUFFIX,joox.com,HK
+  - DOMAIN,www.bing.com,SG
+  - DOMAIN,music.youtube.com,JP
+  - DOMAIN-SUFFIX,claude.ai,US
+  - DOMAIN,bard.google.com,JP
+  - DOMAIN-SUFFIX,openai.com,Scholar
+  - DOMAIN,openaiapi-site.azureedge.net,Scholar
+  - DOMAIN-SUFFIX,bing.com,Scholar
+  - DOMAIN-KEYWORD,scholar,Scholar
+  - DOMAIN-SUFFIX,rxiv.org,Scholar
+  - DOMAIN-SUFFIX,acrjournals.org,Scholar
+  - DOMAIN-SUFFIX,cademic.eb.com,Scholar
+  - DOMAIN-SUFFIX,caric.co.jp,Scholar
+  - DOMAIN-SUFFIX,clweb.org,Scholar
+  - DOMAIN-SUFFIX,cm.org,Scholar
+  - DOMAIN-SUFFIX,cs.org,Scholar
+  - DOMAIN-SUFFIX,gu.org,Scholar
+  - DOMAIN-SUFFIX,iaa.org,Scholar
+  - DOMAIN-SUFFIX,imsciences.org,Scholar
+  - DOMAIN-SUFFIX,ms.org,Scholar
+  - DOMAIN-SUFFIX,natomy.tv,Scholar
+  - DOMAIN-SUFFIX,nalytictech.com,Scholar
+  - DOMAIN-SUFFIX,nnualreviews.org,Scholar
+  - DOMAIN-SUFFIX,ps.org,Scholar
+  - DOMAIN-SUFFIX,rabidopsis.org,Scholar
+  - DOMAIN-SUFFIX,rtstor.org,Scholar
+  - DOMAIN-SUFFIX,scelibrary.org,Scholar
+  - DOMAIN-SUFFIX,sha.org,Scholar
+  - DOMAIN-SUFFIX,sm.org,Scholar
+  - DOMAIN-SUFFIX,sme.org,Scholar
+  - DOMAIN-SUFFIX,sminternational.org,Scholar
+  - DOMAIN-SUFFIX,sn-online.org,Scholar
+  - DOMAIN-SUFFIX,spbjournals.org,Scholar
+  - DOMAIN-SUFFIX,spenpublishing.com,Scholar
+  - DOMAIN-SUFFIX,stm.org,Scholar
+  - DOMAIN-SUFFIX,siam.org,Scholar
+  - DOMAIN,officecdnmac.microsoft.com,DIRECT
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  # - RULE-SET,google,DIRECT
+  - RULE-SET,proxy,PROXY
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,PROXY
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY
