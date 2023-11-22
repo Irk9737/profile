@@ -206,7 +206,7 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing  
     use:
-     - v2free.xyz
+    #  - v2free.xyz
      - protonmail
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
