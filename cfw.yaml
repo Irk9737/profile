@@ -33,11 +33,24 @@ dns:
 proxies:
   - name: "wg"
     type: wireguard
-    server: 188.114.96.0
-    port: 3581
+    server: 162.159.192.186
+    port: 1074
     ip: 172.16.0.2
     ipv6: 2606:4700:110:8aad:5ed:4841:9e02:c702
     private-key: qP7CQs3XVlMJwbjZ6xEgzzw5g0ngcvgIfxsIcq10SEo=
+    public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+    # preshared-key: base64
+    # remote-dns-resolve: true # 远程解析 DNS, 使用 `dns` 字段, 默认为 true
+    dns: [1.1.1.1, 1.0.0.1]
+    mtu: 1280
+    udp: true
+  - name: "wg2"
+    type: wireguard
+    server: 162.159.192.186
+    port: 1074
+    ip: 172.16.0.2
+    ipv6: 2606:4700:110:8aad:5ed:4841:9e02:c702
+    private-key: SPIke+8wzX4UXI7kjdr/4/FsW/f+efduLY7W4ORZeX8=
     public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
     # preshared-key: base64
     # remote-dns-resolve: true # 远程解析 DNS, 使用 `dns` 字段, 默认为 true
@@ -186,6 +199,7 @@ proxy-groups:
     type: select
     proxies:
       - wg
+      - wg2
   - name: ⚖️ 负载均衡-散列
     type: load-balance
     url: http://www.google.com/generate_204
