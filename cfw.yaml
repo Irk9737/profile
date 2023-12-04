@@ -60,7 +60,7 @@ proxies:
 proxy-providers: 
   GlaDOS-HK:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'HK'
@@ -70,7 +70,7 @@ proxy-providers:
       interval: 300
   GlaDOS-US:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'US'
@@ -80,7 +80,7 @@ proxy-providers:
       interval: 300
   GlaDOS-JP:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'JP'
@@ -90,7 +90,7 @@ proxy-providers:
       interval: 300
   GlaDOS-TW:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'TW'
@@ -100,7 +100,7 @@ proxy-providers:
       interval: 300
   GlaDOS-SG:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'SG'
@@ -110,7 +110,7 @@ proxy-providers:
       interval: 300
   GlaDOS-UK:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'UK'
@@ -120,7 +120,7 @@ proxy-providers:
       interval: 300
   GlaDOS-D1:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'D1'
@@ -130,7 +130,7 @@ proxy-providers:
       interval: 300
   GlaDOS-B1:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'B1'
@@ -140,7 +140,7 @@ proxy-providers:
       interval: 300
   GlaDOS-R1:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'R1'
@@ -150,7 +150,7 @@ proxy-providers:
       interval: 300
   GlaDOS-Netflix:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'Netflix'
@@ -160,7 +160,7 @@ proxy-providers:
       interval: 300
   GlaDOS-Scholar:
     type: http
-    path: ./profiles/proxies/GlaDOS/HK.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 1800
     filter: 'S1'
@@ -179,7 +179,7 @@ proxy-providers:
       interval: 300
   protonmail:
     type: http
-    path: ./profiles/proxies/protonmail.yaml
+    path: ./profiles/proxies/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 3600 
     health-check:
