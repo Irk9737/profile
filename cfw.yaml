@@ -179,7 +179,7 @@ proxy-providers:
       interval: 300
   protonmail:
     type: http
-    path: ./profiles/proxies/GlaDOS.yaml
+    path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
     url: https://update.glados-config.com/clash/198624/8d48e80/109981/glados.yaml
     interval: 3600 
     health-check:
