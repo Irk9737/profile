@@ -389,6 +389,7 @@ rule-providers:
 rules:
   - DOMAIN-KEYWORD,gemini,SG
   - DOMAIN,makersuite.google.com,US
+  - DOMAIN,generativelanguage.googleapis.com,US
   - DOMAIN-SUFFIX,twitter.com,HK  
   - DOMAIN-KEYWORD,instagram,HK
   - DOMAIN,www.google.com,US
