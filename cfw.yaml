@@ -387,6 +387,7 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 rules:
+  - DOMAIN-KEYWORD,gemini,SG
   - DOMAIN,makersuite.google.com,US
   - DOMAIN-SUFFIX,twitter.com,HK  
   - DOMAIN-KEYWORD,instagram,HK
