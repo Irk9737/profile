@@ -389,6 +389,7 @@ rule-providers:
 rules:
   - DOMAIN-KEYWORD,gemini,SG
   - DOMAIN,makersuite.google.com,US
+  - DOMAIN,copilot.microsoft.com,TW
   - DOMAIN,generativelanguage.googleapis.com,SG
   - DOMAIN-SUFFIX,twitter.com,HK  
   - DOMAIN-KEYWORD,instagram,HK
@@ -398,7 +399,7 @@ rules:
   - DOMAIN-SUFFIX,intellij.net,PROXY
   - DOMAIN-SUFFIX,okx.com,HK
   - DOMAIN-SUFFIX,joox.com,HK
-  - DOMAIN,www.bing.com,SG
+  - DOMAIN,www.bing.com,TW
   - DOMAIN,music.youtube.com,JP
   - DOMAIN-SUFFIX,claude.ai,US
   - DOMAIN,bard.google.com,JP
