@@ -168,15 +168,6 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-  v2free.xyz:
-    type: http
-    path: ./profiles/proxies/v2free.yaml
-    url: https://to.runba.cyou/link/ECm0fSayxhN1SGrh?clash=1
-    interval: 3600 
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
   protonmail:
     type: http
     path: ./profiles/proxies/GlaDOS/GlaDOS.yaml
@@ -193,7 +184,6 @@ proxy-groups:
       - ⚖️ 负载均衡-散列
       - ⚖️ 负载均衡-轮询
       - GlaDOS
-      - V2Free
       - WireGuard
   - name: WireGuard
     type: select
@@ -206,7 +196,6 @@ proxy-groups:
     interval: 300
     strategy: consistent-hashing  
     use:
-    #  - v2free.xyz
      - protonmail
   - name: ⚖️ 负载均衡-轮询
     type: load-balance
@@ -214,7 +203,6 @@ proxy-groups:
     interval: 300
     strategy: round-robin
     use:
-    #  - v2free.xyz
      - protonmail
   - name: GlaDOS
     type: select
@@ -223,13 +211,6 @@ proxy-groups:
     tolerance: 100
     use:
       - protonmail
-  - name: V2Free
-    type: url-test
-    url: http://www.gstatic.cn/generate_204
-    interval: 300
-    tolerance: 100
-    use:
-      - v2free.xyz
   - name: HK
     type: url-test
     url: http://www.gstatic.cn/generate_204
