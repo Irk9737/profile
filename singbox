@@ -1,0 +1,622 @@
+{
+  "log": {
+    "level": "error",
+    "timestamp": true
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "glados",
+      "store_fakeip": true
+    }
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "cloudflare",
+        "address": "tls://1.1.1.1"
+      },
+      {
+        "tag": "local",
+        "address": "119.29.29.29",
+        "detour": "direct"
+      },
+      {
+        "tag": "google",
+        "address": "tls://8.8.8.8"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "geosite": [
+          "category-pt",
+          "category-public-tracker"
+        ],
+        "server": "block",
+        "disable_cache": true
+      },
+      {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
+        "geosite": "cn",
+        "server": "local"
+      }
+    ],
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": false,
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "Proxy",
+      "outbounds": [
+        "auto",
+        "auto-tw",
+        "b1-01",
+        "b1-02",
+        "b1-03",
+        "b1-04",
+        "n2-01",
+        "n2-02",
+        "n2-03",
+        "n2-04",
+        "auto-uk",
+        "direct"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "selector",
+      "tag": "Scholar",
+      "outbounds": [
+        "uk-01",
+        "uk-02",
+        "uk-03",
+        "direct"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "Express",
+      "outbounds": [
+        "auto",
+        "auto-tw",
+        "auto-uk",
+        "direct"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "selector",
+      "tag": "Netflix",
+      "outbounds": [
+        "netflix-tw-01",
+        "netflix-tw-02",
+        "netflix-us-01",
+        "netflix-us-02",
+        "auto-uk",
+        "direct"
+      ],
+      "default": "netflix-tw-01"
+    },
+    {
+      "type": "selector",
+      "tag": "Manually",
+      "outbounds": [
+        "b1-01",
+        "b1-02",
+        "b1-03",
+        "b1-04",
+        "auto-uk",
+        "direct"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "b1-01",
+        "b1-02",
+        "b1-03",
+        "b1-04",
+        "uk-01",
+        "uk-02",
+        "uk-03"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
+      "tolerance": 50
+    },
+    {
+      "type": "urltest",
+      "tag": "auto-uk",
+      "outbounds": [
+        "uk-01",
+        "uk-02",
+        "uk-03"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
+      "tolerance": 50
+    },
+    {
+      "type": "urltest",
+      "tag": "auto-sg",
+      "outbounds": [
+        "sg-01",
+        "sg-02",
+        "sg-03"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
+      "tolerance": 50
+    },
+    {
+      "type": "urltest",
+      "tag": "auto-tw",
+      "outbounds": [
+        "tw-01",
+        "tw-02",
+        "tw-03",
+        "tw-04"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
+      "tolerance": 50
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "tag": "uk-01",
+      "server": "e3886ec.e1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "uk-02",
+      "server": "e3886ec.e2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "uk-03",
+      "server": "e3886ec.e3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "tw-01",
+      "server": "e3886ec.t1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "tw-02",
+      "server": "e3886ec.t2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "tw-03",
+      "server": "e3886ec.t3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "tw-04",
+      "server": "e3886ec.t4.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "sg-01",
+      "server": "e3886ec.s1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "sg-02",
+      "server": "e3886ec.s2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "sg-03",
+      "server": "e3886ec.s3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "b1-01",
+      "server": "e3886ec.b1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "b1-02",
+      "server": "e3886ec.b2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "b1-03",
+      "server": "e3886ec.b3.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "b1-04",
+      "server": "e3886ec.b4.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "n2-01",
+      "server": "e3886ec.pa.gladns.com",
+      "server_port": 3074,
+      "up_mbps": 200,
+      "down_mbps": 200,
+      "password": "MTk4NjI0OjEwOTk4MTo3YjAyNTJlNGJmODI5YzIy",
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "n2-02",
+      "server": "e3886ec.pb.gladns.com",
+      "server_port": 3074,
+      "up_mbps": 200,
+      "down_mbps": 200,
+      "password": "MTk4NjI0OjEwOTk4MTo3YjAyNTJlNGJmODI5YzIy",
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "n2-03",
+      "server": "e3886ec.pc.gladns.com",
+      "server_port": 3074,
+      "up_mbps": 200,
+      "down_mbps": 200,
+      "password": "MTk4NjI0OjEwOTk4MTo3YjAyNTJlNGJmODI5YzIy",
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "n2-04",
+      "server": "e3886ec.pd.gladns.com",
+      "server_port": 3074,
+      "up_mbps": 200,
+      "down_mbps": 200,
+      "password": "MTk4NjI0OjEwOTk4MTo3YjAyNTJlNGJmODI5YzIy",
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      }
+    },
+    {
+      "tag": "netflix-tw-01",
+      "server": "e3886ec.d1.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "netflix-tw-02",
+      "server": "e3886ec.d2.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "netflix-us-01",
+      "server": "e3886ec.d4.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "netflix-us-02",
+      "server": "e3886ec.d5.gladns.com",
+      "server_port": 2377,
+      "method": "chacha20-ietf-poly1305",
+      "password": "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv",
+      "udp_over_tcp": true,
+      "plugin": "obfs-local",
+      "type": "shadowsocks",
+      "plugin_opts": "obfs=tls;obfs-host=e3886ec.dl.nintendo.net:109981"
+    },
+    {
+      "tag": "g1-01",
+      "server": "e3886ec.f7.gladns.com",
+      "type": "vmess",
+      "uuid": "57e0cb4d-eae5-48ec-8091-149dc2b309e0",
+      "security": "chacha20-poly1305",
+      "alter_id": 0,
+      "network": "tcp",
+      "server_port": 3331,
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/t",
+        "headers": {
+          "Host": "tls.apple.com",
+          "Edge": "e3886ec.fm.huawei.com:109981"
+        }
+      }
+    },
+    {
+      "tag": "g1-02",
+      "server": "e3886ec.f8.gladns.com",
+      "type": "vmess",
+      "uuid": "57e0cb4d-eae5-48ec-8091-149dc2b309e0",
+      "security": "chacha20-poly1305",
+      "alter_id": 0,
+      "network": "tcp",
+      "server_port": 3331,
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/t",
+        "headers": {
+          "Host": "tls.apple.com",
+          "Edge": "e3886ec.fm.huawei.com:109981"
+        }
+      }
+    },
+    {
+      "tag": "g1-03",
+      "server": "e3886ec.f9.gladns.com",
+      "type": "vmess",
+      "uuid": "57e0cb4d-eae5-48ec-8091-149dc2b309e0",
+      "security": "chacha20-poly1305",
+      "alter_id": 0,
+      "network": "tcp",
+      "server_port": 3331,
+      "tls": {
+        "enabled": true,
+        "disable_sni": false,
+        "server_name": "n2.gladns.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/t",
+        "headers": {
+          "Host": "tls.apple.com",
+          "Edge": "e3886ec.fm.huawei.com:109981"
+        }
+      }
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "geosite": "cn",
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          8,
+          25,
+          26,
+          222,
+          465,
+          587,
+          2222,
+          2525,
+          8719
+        ],
+        "outbound": "direct"
+      },
+      {
+        "port": [
+          22
+        ],
+        "outbound": "Manually"
+      },
+      {
+        "domain_suffix": [
+          "ifconfig.me"
+        ],
+        "outbound": "Manually"
+      },
+      {
+        "domain_suffix": [
+          ".cn",
+          ".bilibili.com",
+          ".qq.com",
+          ".taobao.com",
+          ".jd.com",
+          ".baidu.com",
+          ".163.com"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "domain_suffix": [
+          "openai.com"
+        ],
+        "outbound": "Scholar"
+      },
+      {
+        "geosite": [
+          "google-scholar",
+          "category-scholar-!cn"
+        ],
+        "outbound": "Scholar"
+      },
+      {
+        "geosite": "netflix",
+        "outbound": "Netflix"
+      },
+      {
+        "geosite": [
+          "youtube",
+          "category-porn",
+          "category-cryptocurrency",
+          "category-entertainment"
+        ],
+        "outbound": "Express"
+      },
+      {
+        "domain_keyword": [
+          "cdn",
+          "download"
+        ],
+        "outbound": "Express"
+      },
+      {
+        "domain_suffix": [
+          "ip.sb"
+        ],
+        "outbound": "Express"
+      },
+      {
+        "geoip": [
+          "private",
+          "cn"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  }
+}
