@@ -408,13 +408,13 @@ rules:
   - DOMAIN-SUFFIX,googletagservices.com,DIRECT
 
   ##tiktok
-  - DOMAIN-SUFFIX,byteoversea.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,muscdn.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,musical.ly,GLaDOS-US-01
-  - DOMAIN-SUFFIX,tik-tokapi.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,tiktokcdn.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,tiktok.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,tiktokv.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,byteoversea.com,US
+  - DOMAIN-SUFFIX,muscdn.com,US
+  - DOMAIN-SUFFIX,musical.ly,US
+  - DOMAIN-SUFFIX,tik-tokapi.com,US
+  - DOMAIN-SUFFIX,tiktokcdn.com,US
+  - DOMAIN-SUFFIX,tiktok.com,US
+  - DOMAIN-SUFFIX,tiktokv.com,US
 
   #specific scholar services
   - DOMAIN-KEYWORD,scholar,Scholar
