@@ -384,10 +384,57 @@ rules:
   - DOMAIN,music.youtube.com,JP
   - DOMAIN-SUFFIX,claude.ai,US
   - DOMAIN,bard.google.com,JP
+
+  #EMAIL port
+  - DST-PORT,25,DIRECT
+  - DST-PORT,26,DIRECT
+  - DST-PORT,465,DIRECT
+  - DST-PORT,587,DIRECT
+  - DST-PORT,2525,DIRECT
+
+  # allowed safe trackers
+  - DOMAIN,graph.instagram.com,DIRECT
+  - DOMAIN,www.googleadservices.com,DIRECT
+  - DOMAIN,control.kochava.com,DIRECT
+  - DOMAIN,www.google-analytics.com,DIRECT
+  - DOMAIN,ssl.google-analytics.com,DIRECT
+  - DOMAIN,nexus.officeapps.live.com,DIRECT
+  - DOMAIN,googleads.g.doubleclick.net,DIRECT
+  - DOMAIN,e.crashlytics.com,DIRECT
+  - DOMAIN,ib.adnxs.com,DIRECT
+  - DOMAIN,safebrowsing.googleapis.com,DIRECT
+  - DOMAIN-SUFFIX,googlesyndication.com,DIRECT
+  - DOMAIN-SUFFIX,googletagmanager.com,DIRECT
+  - DOMAIN-SUFFIX,googletagservices.com,DIRECT
+
+  ##tiktok
+  - DOMAIN-SUFFIX,byteoversea.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,muscdn.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,musical.ly,GLaDOS-US-01
+  - DOMAIN-SUFFIX,tik-tokapi.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,tiktokcdn.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,tiktok.com,GLaDOS-US-01
+  - DOMAIN-SUFFIX,tiktokv.com,GLaDOS-US-01
+
+  #specific scholar services
+  - DOMAIN-KEYWORD,scholar,Scholar
+  - DOMAIN-SUFFIX,hotmail.com,Scholar
+  - DOMAIN-SUFFIX,slack.com,Scholar
+  - DOMAIN-SUFFIX,live.com,Scholar
+  - DOMAIN-SUFFIX,figma.com,Scholar
+  - DOMAIN-SUFFIX,firefox.com,Scholar
+  - DOMAIN-SUFFIX,notion.com,Scholar
+  - DOMAIN-SUFFIX,x.com,Scholar
+  - DOMAIN-SUFFIX,reddit.com,Scholar
+  - DOMAIN-SUFFIX,office.com,Scholar
+  - DOMAIN-SUFFIX,twimg.com,Scholar
+  - DOMAIN-SUFFIX,pinterest.com,Scholar
+  - DOMAIN-SUFFIX,auth0.com,Scholar
+  - DOMAIN-SUFFIX,oaistatic.com,Scholar
+  - DOMAIN-SUFFIX,oaiusercontent.com,Scholar
+  - DOMAIN-SUFFIX,ai.com,Scholar
   - DOMAIN-SUFFIX,openai.com,Scholar
   - DOMAIN,openaiapi-site.azureedge.net,Scholar
-  - DOMAIN-SUFFIX,bing.com,Scholar
-  - DOMAIN-KEYWORD,scholar,Scholar
   - DOMAIN-SUFFIX,rxiv.org,Scholar
   - DOMAIN-SUFFIX,acrjournals.org,Scholar
   - DOMAIN-SUFFIX,cademic.eb.com,Scholar
@@ -415,6 +462,7 @@ rules:
   - DOMAIN-SUFFIX,spenpublishing.com,Scholar
   - DOMAIN-SUFFIX,stm.org,Scholar
   - DOMAIN-SUFFIX,siam.org,Scholar
+
   - DOMAIN,officecdnmac.microsoft.com,DIRECT
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
