@@ -1,560 +1,596 @@
+# GLaDOS
+# GLobal Local and Destination Operating System
+# Clash Config File for clash-verge/v1.5.1-384397-21-44
+# Generated at Thu Feb 15 2024 14:36:40 GMT+0000 (Coordinated Universal Time) by Aperture Science
+# ░██████╗░██╗░░░░░░█████╗░██████╗░░█████╗░░██████╗
+# ██╔════╝░██║░░░░░██╔══██╗██╔══██╗██╔══██╗██╔════╝
+# ██║░░██╗░██║░░░░░███████║██║░░██║██║░░██║╚█████╗░
+# ██║░░╚██╗██║░░░░░██╔══██║██║░░██║██║░░██║░╚═══██╗
+# ╚██████╔╝███████╗██║░░██║██████╔╝╚█████╔╝██████╔╝
+# ░╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░░╚════╝░╚═════╝░
+# port of HTTP
 port: 7890
+
+# port of SOCKS5
 socks-port: 7891
+
 allow-lan: false
+
+# Rule / Global/ DIRECT (default is Rule)
 mode: rule
+
+
+# set log level to stdout (default is info)
+# info / warning / error / debug
 log-level: info
+
+# A RESTful API for clash
 external-controller: 127.0.0.1:9090
+
+# Secret for RESTful API (Optional)
 secret: ""
+
 dns:
-  enable: false
+  enable: false # set true to enable dns (default is false)
   listen: 127.0.0.1:7053
   nameserver:
-    - 119.29.29.29
-    - 114.114.114.114
-  fallback:
-    - https://1.1.1.1/dns-query
-    - tls://1.0.0.1:853
+     - 119.29.29.29
+     - 114.114.114.114
+  fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
+     - https://1.1.1.1/dns-query
+     - tls://1.0.0.1:853
+
+
 proxies:
   - name: GLaDOS-B1-01
     type: ss
-    server: ab37252.b1.gladns.com
+    server: 46d2dce.b1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.de:77200
+      host: 46d2dce.dl.microsoft.cl:26639
   - name: GLaDOS-B1-02
     type: ss
-    server: ab37252.b2.gladns.com
+    server: 46d2dce.b2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.eu:77200
+      host: 46d2dce.dl.mozilla.net:26639
   - name: GLaDOS-B1-03
     type: ss
-    server: ab37252.b3.gladns.com
+    server: 46d2dce.b3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.com:77200
+      host: 46d2dce.dl.microsoft.lv:26639
   - name: GLaDOS-B1-04
     type: ss
-    server: ab37252.b4.gladns.com
+    server: 46d2dce.b4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.md:77200
+      host: 46d2dce.dl.microsoft.lt:26639
   - name: GLaDOS-B1-05
     type: ss
-    server: ab37252.b5.gladns.com
+    server: 46d2dce.b5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.eu:77200
+      host: 46d2dce.dl.nintendo.net:26639
   - name: GLaDOS-B1-06
     type: ss
-    server: ab37252.b6.gladns.com
+    server: 46d2dce.b6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.ch:77200
+      host: 46d2dce.dl.nintendo.net:26639
   - name: GLaDOS-B1-07
     type: ss
-    server: ab37252.b7.gladns.com
+    server: 46d2dce.b7.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cl:77200
+      host: 46d2dce.dl.nintendo.es:26639
   - name: GLaDOS-B1-08
     type: ss
-    server: ab37252.b8.gladns.com
+    server: 46d2dce.b8.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.com:77200
+      host: 46d2dce.dl.microsoft.ch:26639
   - name: GLaDOS-B1-09
     type: ss
-    server: ab37252.b9.gladns.com
+    server: 46d2dce.b9.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.dk:77200
+      host: 46d2dce.dl.microsoft.hu:26639
+
   - name: GLaDOS-US-01
     type: ss
-    server: ab37252.u1.gladns.com
+    server: 46d2dce.u1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.eu:77200
+      host: 46d2dce.dl.microsoft.dk:26639
   - name: GLaDOS-US-02
     type: ss
-    server: ab37252.u2.gladns.com
+    server: 46d2dce.u2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.it:77200
+      host: 46d2dce.dl.microsoft.md:26639
   - name: GLaDOS-US-03
     type: ss
-    server: ab37252.u3.gladns.com
+    server: 46d2dce.u3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.net:77200
+      host: 46d2dce.dl.microsoft.fi:26639
   - name: GLaDOS-US-04
     type: ss
-    server: ab37252.u4.gladns.com
+    server: 46d2dce.u4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.lt:77200
+      host: 46d2dce.dl.nintendo.de:26639
   - name: GLaDOS-US-05
     type: ss
-    server: ab37252.u5.gladns.com
+    server: 46d2dce.u5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.de:77200
+      host: 46d2dce.dl.nintendo.com:26639
   - name: GLaDOS-US-06
     type: ss
-    server: ab37252.u6.gladns.com
+    server: 46d2dce.u6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.xboxlive.com:77200
+      host: 46d2dce.dl.microsoft.es:26639
   - name: GLaDOS-JP-01
     type: ss
-    server: ab37252.j1.gladns.com
+    server: 46d2dce.j1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.net:77200
+      host: 46d2dce.dl.microsoft.fi:26639
   - name: GLaDOS-JP-02
     type: ss
-    server: ab37252.j2.gladns.com
+    server: 46d2dce.j2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.it:77200
+      host: 46d2dce.dl.nintendo.eu:26639
   - name: GLaDOS-JP-03
     type: ss
-    server: ab37252.j3.gladns.com
+    server: 46d2dce.j3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nvidia.com:77200
+      host: 46d2dce.dl.microsoft.lv:26639
   - name: GLaDOS-TW-01
     type: ss
-    server: ab37252.t1.gladns.com
+    server: 46d2dce.t1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.ge:77200
+      host: 46d2dce.dl.blizzard.com:26639
   - name: GLaDOS-TW-02
     type: ss
-    server: ab37252.t2.gladns.com
+    server: 46d2dce.t2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cz:77200
+      host: 46d2dce.dl.nintendo.eu:26639
   - name: GLaDOS-TW-03
     type: ss
-    server: ab37252.t3.gladns.com
+    server: 46d2dce.t3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.ge:77200
+      host: 46d2dce.dl.nintendo.net:26639
   - name: GLaDOS-TW-04
     type: ss
-    server: ab37252.t4.gladns.com
+    server: 46d2dce.t4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.net:77200
+      host: 46d2dce.dl.microsoft.hu:26639
   - name: GLaDOS-TW-05
     type: ss
-    server: ab37252.t5.gladns.com
+    server: 46d2dce.t5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.mozilla.net:77200
+      host: 46d2dce.dl.microsoft.ge:26639
   - name: GLaDOS-TW-06
     type: ss
-    server: ab37252.t6.gladns.com
+    server: 46d2dce.t6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cz:77200
+      host: 46d2dce.dl.nintendo.de:26639
   - name: GLaDOS-SG-01
     type: ss
-    server: ab37252.s1.gladns.com
+    server: 46d2dce.s1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.com:77200
+      host: 46d2dce.dl.blizzard.com:26639
   - name: GLaDOS-SG-02
     type: ss
-    server: ab37252.s2.gladns.com
+    server: 46d2dce.s2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.lu:77200
+      host: 46d2dce.dl.nintendo.net:26639
   - name: GLaDOS-SG-03
     type: ss
-    server: ab37252.s3.gladns.com
+    server: 46d2dce.s3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.eu:77200
+      host: 46d2dce.dl.microsoft.cl:26639
   - name: GLaDOS-HK-01
     type: ss
-    server: ab37252.h1.gladns.com
+    server: 46d2dce.h1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cat:77200
+      host: 46d2dce.dl.microsoft.eu:26639
   - name: GLaDOS-HK-02
     type: ss
-    server: ab37252.h2.gladns.com
+    server: 46d2dce.h2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.hu:77200
+      host: 46d2dce.dl.microsoft.jp:26639
   - name: GLaDOS-HK-03
     type: ss
-    server: ab37252.h3.gladns.com
+    server: 46d2dce.h3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.fi:77200
+      host: 46d2dce.dl.mozilla.net:26639
   - name: GLaDOS-UK-01
     type: ss
-    server: ab37252.e1.gladns.com
+    server: 46d2dce.e1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cat:77200
+      host: 46d2dce.dl.nintendo.com:26639
   - name: GLaDOS-UK-02
     type: ss
-    server: ab37252.e2.gladns.com
+    server: 46d2dce.e2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cat:77200
+      host: 46d2dce.dl.mozilla.net:26639
   - name: GLaDOS-UK-03
     type: ss
-    server: ab37252.e3.gladns.com
+    server: 46d2dce.e3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.es:77200
+      host: 46d2dce.dl.microsoft.lu:26639
+
   - name: GLaDOS-D1-01
     type: ss
-    server: ab37252.da.gladns.com
+    server: 46d2dce.da.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.it:77200
+      host: 46d2dce.dl.microsoft.ch:26639
   - name: GLaDOS-D1-02
     type: ss
-    server: ab37252.db.gladns.com
+    server: 46d2dce.db.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.lu:77200
+      host: 46d2dce.dl.nvidia.com:26639
   - name: GLaDOS-D1-03
     type: ss
-    server: ab37252.dc.gladns.com
+    server: 46d2dce.dc.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.it:77200
+      host: 46d2dce.dl.microsoft.es:26639
+
   - name: GLaDOS-S1-01
     type: ss
-    server: ab37252.f1.gladns.com
+    server: 46d2dce.f1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.cat.net:77200
+      host: 46d2dce.dl.microsoft.hu.net:26639
   - name: GLaDOS-S1-02
     type: ss
-    server: ab37252.f2.gladns.com
+    server: 46d2dce.f2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.jp.net:77200
+      host: 46d2dce.dl.nintendo.eu.net:26639
   - name: GLaDOS-S1-03
     type: ss
-    server: ab37252.f3.gladns.com
+    server: 46d2dce.f3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.jp.net:77200
+      host: 46d2dce.dl.nintendo.de.net:26639
+
+
+
+
   - name: GLaDOS-TW-1-Netflix
     type: ss
-    server: ab37252.d1.gladns.com
+    server: 46d2dce.d1.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.io.net:77200
+      host: 46d2dce.dl.microsoft.dk.net:26639
   - name: GLaDOS-TW-2-Netflix
     type: ss
-    server: ab37252.d2.gladns.com
+    server: 46d2dce.d2.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.fi.net:77200
+      host: 46d2dce.dl.nintendo.de.net:26639
   - name: GLaDOS-TW-3-Netflix
     type: ss
-    server: ab37252.d3.gladns.com
+    server: 46d2dce.d3.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.nintendo.it.net:77200
+      host: 46d2dce.dl.microsoft.lu.net:26639
   - name: GLaDOS-US-4-Netflix
     type: ss
-    server: ab37252.d4.gladns.com
+    server: 46d2dce.d4.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.io.net:77200
+      host: 46d2dce.dl.fastly.net.net:26639
   - name: GLaDOS-US-5-Netflix
     type: ss
-    server: ab37252.d5.gladns.com
+    server: 46d2dce.d5.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.io.net:77200
+      host: 46d2dce.dl.microsoft.jp.net:26639
   - name: GLaDOS-US-6-Netflix
     type: ss
-    server: ab37252.d6.gladns.com
+    server: 46d2dce.d6.gladns.com
     port: 2377
     cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: obfs
     plugin-opts:
       mode: tls
-      host: ab37252.dl.microsoft.lv.net:77200
+      host: 46d2dce.dl.nintendo.be.net:26639
+
   - name: GLaDOS-R1-01
     type: ss
-    server: ab37252.qa.glados-config.com
+    server: 46d2dce.qa.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: endpoint.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
   - name: GLaDOS-R1-02
     type: ss
-    server: ab37252.qb.glados-config.com
+    server: 46d2dce.qb.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: endpoint.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
   - name: GLaDOS-R1-03
     type: ss
-    server: ab37252.qc.glados-config.com
+    server: 46d2dce.qc.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: endpoint.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
   - name: GLaDOS-R1-04
     type: ss
-    server: ab37252.qd.glados-config.com
+    server: 46d2dce.qd.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: intrepid.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
   - name: GLaDOS-R1-05
     type: ss
-    server: ab37252.qe.glados-config.com
+    server: 46d2dce.qe.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: intrepid.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
   - name: GLaDOS-R1-06
     type: ss
-    server: ab37252.qf.glados-config.com
+    server: 46d2dce.qf.glados-config.com
     port: 8880
-    cipher: chacha20-ietf-poly1305
-    password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+    cipher:  chacha20-ietf-poly1305
+    password: "t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv"
     plugin: v2ray-plugin
     plugin-opts:
       mode: websocket
       tls: false
       host: intrepid.moss.network
-      path: /9daad54c-7685-402c-8a97-e6a04ec7cb11/connect
+      path: "/9daad54c-7685-402c-8a97-e6a04ec7cb11/connect"
       mux: true
       headers:
-        edge: ab37252.fm.huawei.com:77200
+       edge: 46d2dce.fm.huawei.com:26639
+
 proxy-groups:
   - name: Auto-Fast
     type: url-test
@@ -909,6 +945,14 @@ proxy-groups:
       - GLaDOS-JP-02
       - GLaDOS-JP-03
 rules:
+  - DOMAIN,gemini.google.com,TW
+  - DOMAIN-KEYWORD,gemini,SG
+  - DOMAIN,douyin.com,SG
+  - DOMAIN,makersuite.google.com,US
+  - DOMAIN,copilot.microsoft.com,TW
+  - DOMAIN,generativelanguage.googleapis.com,TW
+  - DOMAIN,google.com,US
+  - DOMAIN-SUFFIX,www.google.com,US
   - DOMAIN-SUFFIX,translate.googleapis.com,Proxy
   - DOMAIN-SUFFIX,bing.com,Proxy
   - DST-PORT,25,DIRECT
@@ -958,67 +1002,69 @@ rules:
   - DOMAIN-SUFFIX,tiktok.com,GLaDOS-US-01
   - DOMAIN-SUFFIX,tiktokv.com,GLaDOS-US-01
   - DOMAIN-KEYWORD,scholar,Scholar
-  - DOMAIN-SUFFIX,hotmail.com,Scholar
-  - DOMAIN-SUFFIX,slack.com,Scholar
-  - DOMAIN-SUFFIX,live.com,Scholar
-  - DOMAIN-SUFFIX,figma.com,Scholar
-  - DOMAIN-SUFFIX,firefox.com,Scholar
-  - DOMAIN-SUFFIX,notion.com,Scholar
-  - DOMAIN-SUFFIX,x.com,Scholar
-  - DOMAIN-SUFFIX,reddit.com,Scholar
-  - DOMAIN-SUFFIX,office.com,Scholar
-  - DOMAIN-SUFFIX,twimg.com,Scholar
-  - DOMAIN-SUFFIX,pinterest.com,Scholar
-  - DOMAIN-SUFFIX,auth0.com,Scholar
+  - DOMAIN-KEYWORD,openai,Scholar
+  - DOMAIN-SUFFIX,openai.com,Scholar
+  - DOMAIN-SUFFIX,chatgpt.com,Scholar
   - DOMAIN-SUFFIX,oaistatic.com,Scholar
   - DOMAIN-SUFFIX,oaiusercontent.com,Scholar
   - DOMAIN-SUFFIX,ai.com,Scholar
-  - DOMAIN-SUFFIX,openai.com,Scholar
-  - DOMAIN,openaiapi-site.azureedge.net,Scholar
-  - DOMAIN-SUFFIX,rxiv.org,Scholar
-  - DOMAIN-SUFFIX,acrjournals.org,Scholar
-  - DOMAIN-SUFFIX,cademic.eb.com,Scholar
-  - DOMAIN-SUFFIX,caric.co.jp,Scholar
-  - DOMAIN-SUFFIX,clweb.org,Scholar
-  - DOMAIN-SUFFIX,cm.org,Scholar
-  - DOMAIN-SUFFIX,cs.org,Scholar
-  - DOMAIN-SUFFIX,gu.org,Scholar
-  - DOMAIN-SUFFIX,iaa.org,Scholar
-  - DOMAIN-SUFFIX,imsciences.org,Scholar
-  - DOMAIN-SUFFIX,ms.org,Scholar
-  - DOMAIN-SUFFIX,natomy.tv,Scholar
-  - DOMAIN-SUFFIX,nalytictech.com,Scholar
-  - DOMAIN-SUFFIX,nnualreviews.org,Scholar
-  - DOMAIN-SUFFIX,ps.org,Scholar
-  - DOMAIN-SUFFIX,rabidopsis.org,Scholar
-  - DOMAIN-SUFFIX,rtstor.org,Scholar
-  - DOMAIN-SUFFIX,scelibrary.org,Scholar
-  - DOMAIN-SUFFIX,sha.org,Scholar
-  - DOMAIN-SUFFIX,sm.org,Scholar
-  - DOMAIN-SUFFIX,sme.org,Scholar
-  - DOMAIN-SUFFIX,sminternational.org,Scholar
-  - DOMAIN-SUFFIX,sn-online.org,Scholar
-  - DOMAIN-SUFFIX,spbjournals.org,Scholar
-  - DOMAIN-SUFFIX,spenpublishing.com,Scholar
-  - DOMAIN-SUFFIX,stm.org,Scholar
-  - DOMAIN-SUFFIX,siam.org,Scholar
-  - DOMAIN-KEYWORD,github,Scholar
-  - DOMAIN-SUFFIX,atom.io,Scholar
-  - DOMAIN-SUFFIX,dependabot.com,Scholar
-  - DOMAIN-SUFFIX,ghcr.io,Scholar
-  - DOMAIN-SUFFIX,git.io,Scholar
-  - DOMAIN-SUFFIX,myoctocat.com,Scholar
-  - DOMAIN-SUFFIX,npm.community,Scholar
-  - DOMAIN-SUFFIX,npmjs.com,Scholar
-  - DOMAIN-SUFFIX,npmjs.org,Scholar
-  - DOMAIN-SUFFIX,opensource.guide,Scholar
-  - DOMAIN-SUFFIX,rawgit.com,Scholar
-  - DOMAIN-SUFFIX,repo.new,Scholar
-  - DOMAIN-KEYWORD,discord,Scholar
-  - DOMAIN-SUFFIX,airhorn.solutions,Scholar
-  - DOMAIN-SUFFIX,airhornbot.com,Scholar
-  - DOMAIN-SUFFIX,bigbeans.solutions,Scholar
-  - DOMAIN-SUFFIX,dis.gd,Scholar
+  - DOMAIN-SUFFIX,hotmail.com,Proxy
+  - DOMAIN-SUFFIX,slack.com,Proxy
+  - DOMAIN-SUFFIX,live.com,Proxy
+  - DOMAIN-SUFFIX,figma.com,Proxy
+  - DOMAIN-SUFFIX,firefox.com,Proxy
+  - DOMAIN-SUFFIX,notion.com,Proxy
+  - DOMAIN-SUFFIX,x.com,Proxy
+  - DOMAIN-SUFFIX,reddit.com,Proxy
+  - DOMAIN-SUFFIX,office.com,Proxy
+  - DOMAIN-SUFFIX,twimg.com,Proxy
+  - DOMAIN-SUFFIX,pinterest.com,Proxy
+  - DOMAIN-SUFFIX,auth0.com,Proxy
+  - DOMAIN,openaiapi-site.azureedge.net,Proxy
+  - DOMAIN-SUFFIX,rxiv.org,Proxy
+  - DOMAIN-SUFFIX,acrjournals.org,Proxy
+  - DOMAIN-SUFFIX,cademic.eb.com,Proxy
+  - DOMAIN-SUFFIX,caric.co.jp,Proxy
+  - DOMAIN-SUFFIX,clweb.org,Proxy
+  - DOMAIN-SUFFIX,cm.org,Proxy
+  - DOMAIN-SUFFIX,cs.org,Proxy
+  - DOMAIN-SUFFIX,gu.org,Proxy
+  - DOMAIN-SUFFIX,iaa.org,Proxy
+  - DOMAIN-SUFFIX,imsciences.org,Proxy
+  - DOMAIN-SUFFIX,ms.org,Proxy
+  - DOMAIN-SUFFIX,natomy.tv,Proxy
+  - DOMAIN-SUFFIX,nalytictech.com,Proxy
+  - DOMAIN-SUFFIX,nnualreviews.org,Proxy
+  - DOMAIN-SUFFIX,ps.org,Proxy
+  - DOMAIN-SUFFIX,rabidopsis.org,Proxy
+  - DOMAIN-SUFFIX,rtstor.org,Proxy
+  - DOMAIN-SUFFIX,scelibrary.org,Proxy
+  - DOMAIN-SUFFIX,sha.org,Proxy
+  - DOMAIN-SUFFIX,sm.org,Proxy
+  - DOMAIN-SUFFIX,sme.org,Proxy
+  - DOMAIN-SUFFIX,sminternational.org,Proxy
+  - DOMAIN-SUFFIX,sn-online.org,Proxy
+  - DOMAIN-SUFFIX,spbjournals.org,Proxy
+  - DOMAIN-SUFFIX,spenpublishing.com,Proxy
+  - DOMAIN-SUFFIX,stm.org,Proxy
+  - DOMAIN-SUFFIX,siam.org,Proxy
+  - DOMAIN-KEYWORD,github,Proxy
+  - DOMAIN-SUFFIX,atom.io,Proxy
+  - DOMAIN-SUFFIX,dependabot.com,Proxy
+  - DOMAIN-SUFFIX,ghcr.io,Proxy
+  - DOMAIN-SUFFIX,git.io,Proxy
+  - DOMAIN-SUFFIX,myoctocat.com,Proxy
+  - DOMAIN-SUFFIX,npm.community,Proxy
+  - DOMAIN-SUFFIX,npmjs.com,Proxy
+  - DOMAIN-SUFFIX,npmjs.org,Proxy
+  - DOMAIN-SUFFIX,opensource.guide,Proxy
+  - DOMAIN-SUFFIX,rawgit.com,Proxy
+  - DOMAIN-SUFFIX,repo.new,Proxy
+  - DOMAIN-KEYWORD,discord,Proxy
+  - DOMAIN-SUFFIX,airhorn.solutions,Proxy
+  - DOMAIN-SUFFIX,airhornbot.com,Proxy
+  - DOMAIN-SUFFIX,bigbeans.solutions,Proxy
+  - DOMAIN-SUFFIX,dis.gd,Proxy
   - DOMAIN-SUFFIX,gstatic.com,Proxy
   - DOMAIN-SUFFIX,google.com,Proxy
   - DOMAIN-SUFFIX,figma.com,Proxy
@@ -1632,12 +1678,5 @@ rules:
   - DOMAIN-SUFFIX,cn,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,Proxy
-  - DOMAIN-KEYWORD,gemini,SG
-  - DOMAIN,makersuite.google.com,GLaDOS-US-01
-  - DOMAIN,copilot.microsoft.com,GLaDOS-TW-01
-  - DOMAIN,generativelanguage.googleapis.com,GLaDOS-TW-01
-  - DOMAIN,google.com,GLaDOS-US-01
-  - DOMAIN-SUFFIX,translate.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,bing.com,Proxy
 proxy-providers: {}
 rule-providers: {}
